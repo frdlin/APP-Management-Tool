@@ -1,0 +1,166 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="style/style.css" />
+<link rel="stylesheet" href="style/swiper.css">
+<link rel="stylesheet" href="style/jquery-ui.css">
+<script type="text/javascript" src="script/vue1oix.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+<title>Example</title>
+<script src="script/jquery.js"></script>
+<script src="script/hammer.js"></script>
+<script src="script/jquery-ui.js"></script>
+<quu>
+<script>
+
+$(document).ready(function(e) {
+	
+	var startX, curX, startY, curY; // Variables
+	var newXScroll, newYScroll, genXScroll; // More Variables!
+	
+	// Change the height of the sidebar, as well as a few things to do with the main content area, so the user
+	// can actually scroll in the content area.
+	function sideBarHeight() { 
+	
+		var docHeight = $(document).height();
+		var winHeight = $(window).height();
+		
+		$('.slide-in').height(winHeight);
+		$('#main-container').height(winHeight);
+		$('#sub-container').height($('#sub-container').height());
+	} 
+	
+	sideBarHeight();
+	
+	var outIn = 'in';
+	
+	function runAnimation() {
+	
+		if(outIn == 'out') {
+			
+			$('.slide-in').toggleClass('on');
+			$('#main-container').toggleClass('on');	
+			outIn = 'in';
+			
+		} else if(outIn == 'in') {
+		
+			$('.slide-in').toggleClass('on');	
+			$('#main-container').toggleClass('on');	
+			outIn = 'out';
+			
+		}
+	
+	}
+	
+	$('.menu-icon')[0].addEventListener('touchend', function(e) {
+		$('.slide-in').toggleClass('on');		
+		$('#main-container').toggleClass('on');
+	});
+	
+	$('.menu-icon').click(function() {
+		$('.slide-in').toggleClass('on');		
+		$('#main-container').toggleClass('on');
+	});
+	
+});
+
+</script>
+<script>
+	$(function() {
+		$( "#push-type" ).buttonset();
+	});
+</script>
+</head>
+<body>
+<div class="menu-icon">
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+</div>
+<div id="main-container" class="tk-chaparral-pro">
+
+	<div id="sub-container">
+		<div class="top-bar">
+			<div class="app-switch">
+				<span class="switch"><a href="#"><</a></span>
+				<div class="current-app">
+					<div class="icon"><img src="images/fakeapp.png"></div>
+				</div>
+				<span class="switch"><a href="">></a></span>
+				<div class="clear"></div>
+				<span class="app-name">鈔票 APP</span>
+			</div>
+			<nav class="main-nav">
+				<ul>
+					<li class="new-push"><span><a href="#">新增推播</a></span></li>
+					<li class="push-record"><span><a href="#">推播紀錄</a></span></li>
+					<li class="analysis"><span><a href="#">分析圖表</a></span></li>
+					<li class="setting"><span><a href="#">開發設定</a></span></li>
+				</ul>
+			</nav>
+			<div class="topbar-right">
+				<span class="user">123@jamzoo.com.tw</span>
+				<button class="logout">登出</button>
+			</div>
+			
+		</div>
+		<div id="content" class="content-area">
+			<h2>建立觸發式推播</h2>
+			<div class="result-area">
+				<div class="step-bar-3">
+					<div class="step on">
+						<div class="step-ball" id="step-01">1</div>
+						<label for="step-01">推播類型</label>
+						<div class="step-line"> </div>
+					</div>
+					<div class="step">
+						<div class="step-ball" id="step-02">2</div>
+						<label for="step-02">推播內容</label>
+						<div class="step-line"> </div>
+					</div>
+					<div class="step">
+						<div class="step-ball" id="step-03">3</div>
+						<label for="step-03">推播時機</label>
+						<div class="step-line"> </div>
+					</div>
+				</div>
+				<div class="clear"></div>
+				<h3>選擇推播類型</h3>
+				<div id="push-type">
+					<input type="radio" id="radio1" name="radio" class="radio"><label for="radio1">文字推播（僅標題）</label>
+					<input type="radio" id="radio2" name="radio"><label for="radio2">長文字推播（標題及內文）</label>
+					<input type="radio" id="radio3" name="radio"><label for="radio3">網頁推播</label>
+					<input type="radio" id="radio4" name="radio"><label for="radio4">圖片推播</label>
+					<input type="radio" id="radio5" name="radio"><label for="radio5">音樂推播</label>
+					<input type="radio" id="radio6" name="radio"><label for="radio6">影片推播</label>
+					<input type="radio" id="radio7" name="radio"><label for="radio7">地圖推播</label>
+					<input type="radio" id="radio8" name="radio"><label for="radio8">提醒 / 行事曆推播（Windows Phone 限為檢視功能）</label>
+				</div>
+			</div>
+		</div>
+		<div class="bottom-area">
+			<div class="bottom-right">
+				<button disabled>下一步</button>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>	
+</div>
+
+<div class="slide-in">
+	<ul class="tk-museo-sans">
+		<li><a href="#">APP 管理</a></li>
+		<li>新增 APP</li>
+		<li>帳號與組織</li>
+		<li>支援與下載</li>
+		<li>公告訊息</li>
+		<li>進階搜尋</li>
+		<li>帳號資料</li>
+		<li>WatchDog</li>		
+	</ul>
+</div>
+
+</body>
+</html>

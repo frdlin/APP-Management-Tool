@@ -1,0 +1,245 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="style/style.css" />
+<link rel="stylesheet" href="style/swiper.css">
+<script type="text/javascript" src="script/vue1oix.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+<title>Example</title>
+<script src="script/jquery.js"></script>
+<script src="script/hammer.js"></script>
+
+
+<script>
+
+$(document).ready(function(e) {
+	
+	var startX, curX, startY, curY; // Variables
+	var newXScroll, newYScroll, genXScroll; // More Variables!
+	
+	// Change the height of the sidebar, as well as a few things to do with the main content area, so the user
+	// can actually scroll in the content area.
+	function sideBarHeight() { 
+	
+		var docHeight = $(document).height();
+		var winHeight = $(window).height();
+		
+		$('.slide-in').height(winHeight);
+		$('#main-container').height(winHeight);
+		$('#sub-container').height($('#sub-container').height());
+	} 
+	
+	sideBarHeight();
+	
+	var outIn = 'in';
+	
+	function runAnimation() {
+	
+		if(outIn == 'out') {
+			
+			$('.slide-in').toggleClass('on');
+			$('#main-container').toggleClass('on');	
+			outIn = 'in';
+			
+		} else if(outIn == 'in') {
+		
+			$('.slide-in').toggleClass('on');	
+			$('#main-container').toggleClass('on');	
+			outIn = 'out';
+			
+		}
+	
+	}
+	
+	$('.menu-icon')[0].addEventListener('touchend', function(e) {
+		$('.slide-in').toggleClass('on');		
+		$('#main-container').toggleClass('on');
+	});
+	
+	$('.menu-icon').click(function() {
+		$('.slide-in').toggleClass('on');		
+		$('#main-container').toggleClass('on');
+	});
+	
+});
+
+</script>
+
+</head>
+<body>
+<div class="menu-icon">
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+</div>
+<div id="main-container" class="tk-chaparral-pro">
+
+	<div id="sub-container">
+		<div class="top-bar">
+			<div class="app-switch">
+				<span class="switch"><a href="#"><</a></span>
+				<div class="current-app">
+					<div class="icon"><img src="images/fakeapp.png"></div>
+				</div>
+				<span class="switch"><a href="">></a></span>
+				<div class="clear"></div>
+				<span class="app-name">鈔票 APP</span>
+			</div>
+			<nav class="main-nav">
+				<ul>
+					<li class="new-push"><span><a href="#">新增推播</a></span></li>
+					<li class="push-record"><span><a href="#">推播紀錄</a></span></li>
+					<li class="analysis"><span><a href="#">分析圖表</a></span></li>
+					<li class="setting"><span><a href="#">開發設定</a></span></li>
+				</ul>
+			</nav>
+			<div class="topbar-right">
+				<span class="user">123@jamzoo.com.tw</span>
+				<button class="logout">登出</button>
+			</div>
+			
+		</div>
+		<div class="second-bar">
+				<table class="status">
+					<tr>
+						<td>合計期間下載</td>
+						<td class="number">2054</td>
+						<td>目前活躍量</td>
+						<td class="number">2054</td>
+						<td>狀態</td>
+					</tr>
+					<tr>
+						<td>iOS</td>
+						<td class="number">504</td>
+						<td>iOS</td>
+						<td class="number">504</td>
+						<td>上架商品</td>
+					</tr>
+					<tr>
+						<td>Android</td>
+						<td class="number">1485</td>
+						<td>Android</td>
+						<td class="number">1485</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>WinPhone</td>
+						<td class="number">15</td>
+						<td>WinPhone</td>
+						<td class="number">15</td>
+						<td></td>
+					</tr>
+				</table>
+				<nav class="second-nav">
+					<ul>
+						<li>裝置數量</li>
+						<li>推播開啟</li>
+						<li class="on">裝置分析</li>
+						<li>報表下載</li>
+					</ul>
+				</nav>
+			
+		</div>
+		<div id="content" class="content-area">
+			<h2>裝置分析總覽</h2>
+			<div class="switch-area">
+				<h3>所有期間</h3>
+				<ul class="switch">
+					<li class="on">國家</li>
+					<li>行政區</li>
+					<li>裝置型號</li>
+					<li>作業系統</li>
+					<li>裝置解析度</li>
+				</ul>
+				<div class="clear"></div>
+			</div>
+			<div class="score-area">
+				<ul class="score one-fourth">
+					<li class="first">
+						<div class="number">100,257</div>
+						<label>台灣</label>
+					</li>
+					<li class="second">
+						<div class="number">37,321</div>
+						<label>中國</label>
+					</li>
+					<li class="third">
+						<div class="number">7,027</div>
+						<label>美國</label>
+					</li>
+					<li class="fourth">
+						<div class="number">7,043</div>
+						<label>香港</label>
+					</li>
+				</ul>
+			</div>
+			<h2>國家</h2>
+			<div class="result-area">
+				<div class="left-content">
+					map
+				</div>
+				<div class="right-content">
+					<table>
+						<tr>
+							<th>排序</th>
+							<th>國家</th>
+							<th>數量（比例）</th>
+						</tr>
+						<tr class="single">
+							<td>1</td>
+							<td>台灣</td>
+							<td>5,000(10%)</td>	
+						</tr>
+						<tr class="double">
+							<td>2</td>
+							<td>中國</td>
+							<td>5,000(10%)</td>	
+						</tr>
+						<tr class="single">
+							<td>3</td>
+							<td>美國</td>
+							<td>5,000(10%)</td>	
+						</tr>
+						<tr class="double">
+							<td>4</td>
+							<td>香港</td>
+							<td>5,000(10%)</td>	
+						</tr>
+						<tr class="single">
+							<td>5</td>
+							<td>加拿大</td>
+							<td>5,000(10%)</td>	
+						</tr>
+						<tr class="double">
+							<td>6</td>
+							<td>澳洲</td>
+							<td>5,000(10%)</td>	
+						</tr>
+					</table>
+				</div>
+
+				<div class="clear"></div>
+
+			</div>
+		</div>
+	</div>	
+</div>
+
+<div class="slide-in">
+	<ul class="tk-museo-sans">
+		<li><a href="#">APP 管理</a></li>
+		<li>新增 APP</li>
+		<li>帳號與組織</li>
+		<li>支援與下載</li>
+		<li>公告訊息</li>
+		<li>進階搜尋</li>
+		<li>帳號資料</li>
+		<li>WatchDog</li>		
+	</ul>
+</div>
+
+</body>
+</html>

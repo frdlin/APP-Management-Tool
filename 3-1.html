@@ -1,0 +1,417 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="style/style.css" />
+<link rel="stylesheet" href="style/swiper.css">
+<link rel="stylesheet" href="style/jquery-ui.css">
+<script type="text/javascript" src="script/vue1oix.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+<title>Example</title>
+<script src="script/jquery.js"></script>
+<script src="script/hammer.js"></script>
+<script src="script/jquery-ui.js"></script>
+<script>
+
+$(document).ready(function(e) {
+	
+	var startX, curX, startY, curY; // Variables
+	var newXScroll, newYScroll, genXScroll; // More Variables!
+	
+	// Change the height of the sidebar, as well as a few things to do with the main content area, so the user
+	// can actually scroll in the content area.
+	function sideBarHeight() { 
+	
+		var docHeight = $(document).height();
+		var winHeight = $(window).height();
+		
+		$('.slide-in').height(winHeight);
+		$('#main-container').height(winHeight);
+		$('#sub-container').height($('#sub-container').height());
+	} 
+	
+	sideBarHeight();
+	
+	var outIn = 'in';
+	
+	function runAnimation() {
+	
+		if(outIn == 'out') {
+			
+			$('.slide-in').toggleClass('on');
+			$('#main-container').toggleClass('on');	
+			outIn = 'in';
+			
+		} else if(outIn == 'in') {
+		
+			$('.slide-in').toggleClass('on');	
+			$('#main-container').toggleClass('on');	
+			outIn = 'out';
+			
+		}
+	
+	}
+	
+	$('.menu-icon')[0].addEventListener('touchend', function(e) {
+		$('.slide-in').toggleClass('on');		
+		$('#main-container').toggleClass('on');
+	});
+	
+	$('.menu-icon').click(function() {
+		$('.slide-in').toggleClass('on');		
+		$('#main-container').toggleClass('on');
+	});
+	
+});
+
+</script>
+
+<!-- Checkbox Group-->
+<script>
+	$(function() {
+		$( "#push-type" ).buttonset();
+		$( "#push-type-01" ).buttonset();
+		$( "#push-type-02" ).buttonset();
+		$( "#push-type-03" ).buttonset();
+	});
+</script>
+
+<!-- Datepicker-->
+<script>
+	$(function() {
+		$( ".datepicker" ).datepicker();
+	});
+</script>
+
+
+
+</head>
+<body>
+<div class="menu-icon">
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+</div>
+<div id="main-container" class="tk-chaparral-pro">
+
+	<div id="sub-container">
+		<div class="top-bar">
+			<div class="app-switch">
+				<span class="switch"><a href="#"><</a></span>
+				<div class="current-app">
+					<div class="icon"><img src="images/fakeapp.png"></div>
+				</div>
+				<span class="switch"><a href="">></a></span>
+				<div class="clear"></div>
+				<span class="app-name">鈔票 APP</span>
+			</div>
+			<nav class="main-nav">
+				<ul>
+					<li class="new-push"><span><a href="#">新增推播</a></span></li>
+					<li class="push-record"><span><a href="#">推播紀錄</a></span></li>
+					<li class="analysis"><span><a href="#">分析圖表</a></span></li>
+					<li class="setting"><span><a href="#">開發設定</a></span></li>
+				</ul>
+			</nav>
+			<div class="topbar-right">
+				<span class="user">123@jamzoo.com.tw</span>
+				<button class="logout">登出</button>
+			</div>
+			
+		</div>
+		<div id="content" class="content-area">
+			<h2>建立觸發式推播</h2>
+			<div class="result-area">
+				<div class="step-bar-3">
+					<div class="step on">
+						<div class="step-ball" id="step-01">1</div>
+						<label for="step-01">推播類型</label>
+						<div class="step-line"> </div>
+					</div>
+					<div class="step on">
+						<div class="step-ball" id="step-02">2</div>
+						<label for="step-02">推播內容</label>
+						<div class="step-line"> </div>
+					</div>
+					<div class="step">
+						<div class="step-ball" id="step-03">3</div>
+						<label for="step-03">推播時機</label>
+						<div class="step-line"> </div>
+					</div>
+				</div>
+				<div class="clear"></div>
+
+				<!-- 長文字推播-->
+				<h3>請填寫推播內容<a class="h3-link">使用說明</a></h3>
+				<div class="left-content">
+					<div class="input-set">
+						<label for="input-01">標題內容</label><input type="text" id="input-01">
+					</div>
+					<div class="input-set">
+						<label for="input-02">按鈕字樣</label><input type="text" id="input-02">
+					</div>
+					<div class="input-set">
+						<label for="textarea-01">內文</label><textarea type="text" id="textarea-01"></textarea>
+					</div>
+					<div class="input-set">
+						<label for="textarea-02">自訂欄位<a class="h3-link">教學點此</a></label><textarea type="text" id="textarea-02"></textarea>
+					</div>
+				</div>
+				<div class="right-content">
+					預覽
+				</div>
+				<div class="clear"></div>
+				<hr>
+
+				<!-- 網頁推播-->
+				<h3>請填寫推播內容<a class="h3-link">使用說明</a></h3>
+				<div class="left-content">
+					<div class="input-set">
+						<label for="input-01">標題內容</label><input type="text" id="input-01">
+					</div>
+					<div class="input-set">
+						<label for="input-02">按鈕字樣</label><input type="text" id="input-02">
+					</div>
+					<div class="input-set">
+						<label for="input-03">網址</label><input type="text" id="input-03" class="l">
+					</div>
+					<div class="input-set">
+						<label for="textarea-01">內文</label><textarea type="text" id="textarea-01"></textarea>
+					</div>
+					<div class="input-set">
+						<label for="textarea-02">自訂欄位<a class="h3-link">教學點此</a></label><textarea type="text" id="textarea-02"></textarea>
+					</div>
+				</div>
+				<div class="right-content">
+					預覽
+				</div>
+				<div class="clear"></div>
+				<hr>
+
+				<!-- 圖片推播-->
+				<h3>請填寫推播內容<a class="h3-link">使用說明</a></h3>
+				<div class="left-content">
+					<div class="input-set">
+						<label for="input-01">標題內容</label><input type="text" id="input-01">
+					</div>
+					<div class="input-set">
+						<label for="input-02">按鈕字樣</label><input type="text" id="input-02">
+					</div>
+					<div class="input-set">
+						<label for="input-03">圖片網址</label><input type="text" id="input-03" class="l">
+					</div>
+					<div class="input-set">
+						<label for="textarea-01">內文</label><textarea type="text" id="textarea-01"></textarea>
+					</div>
+					<div class="input-set">
+						<label for="textarea-02">自訂欄位<a class="h3-link">教學點此</a></label><textarea type="text" id="textarea-02"></textarea>
+					</div>
+				</div>
+				<div class="right-content">
+					預覽
+				</div>
+				<div class="clear"></div>
+				<hr>
+
+				<!-- 音樂推播-->
+				<h3>請填寫推播內容<a class="h3-link">使用說明</a></h3>
+				<div class="left-content">
+					<div class="input-set">
+						<label for="input-01">標題內容</label><input type="text" id="input-01">
+					</div>
+					<div class="input-set">
+						<label for="input-02">按鈕字樣</label><input type="text" id="input-02">
+					</div>
+					<div class="input-set">
+						<label for="input-03">音樂網址</label><input type="text" id="input-03" class="l">
+					</div>
+					<div class="input-set">
+						<label for="textarea-01">內文</label><textarea type="text" id="textarea-01"></textarea>
+					</div>
+					<div class="input-set">
+						<label for="textarea-02">自訂欄位<a class="h3-link">教學點此</a></label><textarea type="text" id="textarea-02"></textarea>
+					</div>
+				</div>
+				<div class="right-content">
+					預覽
+				</div>
+				<div class="clear"></div>
+				<hr>
+
+				<!-- 影片推播-->
+				<h3>請填寫推播內容<a class="h3-link">使用說明</a></h3>
+				<div class="left-content">
+					<div class="input-set">
+						<label for="input-01">標題內容</label><input type="text" id="input-01">
+					</div>
+					<div class="input-set">
+						<label for="input-02">按鈕字樣</label><input type="text" id="input-02">
+					</div>
+					<div class="input-set">
+						<label for="input-03">影片來源</label>
+						<div id="push-type">
+							<input type="radio" id="radio1" name="radio" class="radio"><label for="radio1">YouTube</label>
+							<input type="radio" id="radio2" name="radio"><label for="radio2">自訂網址</label>
+						</div>
+					</div>
+					<div class="input-set">
+						<label for="input-03">影片網址</label><input type="text" id="input-03" class="l">
+					</div>
+					<div class="input-set">
+						<label for="textarea-01">內文</label><textarea type="text" id="textarea-01"></textarea>
+					</div>
+					<div class="input-set">
+						<label for="textarea-02">自訂欄位<a class="h3-link">教學點此</a></label><textarea type="text" id="textarea-02"></textarea>
+					</div>
+				</div>
+				<div class="right-content">
+					預覽
+				</div>
+				<div class="clear"></div>
+				<hr>
+
+				<!-- 地圖推播-->
+				<h3>請填寫推播內容<a class="h3-link">使用說明</a></h3>
+				<div class="left-content">
+					<div class="input-set">
+						<label for="input-01">標題內容</label><input type="text" id="input-01">
+					</div>
+					<div class="input-set">
+						<label for="input-02">按鈕字樣</label><input type="text" id="input-02">
+					</div>
+					<div class="input-set">
+						<label for="input-03">輸入方式</label>
+						<div id="push-type-01">
+							<input type="radio" id="radio3" name="radio" class="radio"><label for="radio3">地址（一行一個地址）</label>
+							<input type="radio" id="radio4" name="radio"><label for="radio4">經緯度（格式為【緯度,經度】，一行一個，如25.0442,121.5586）</label>
+						</div>
+					</div>
+					<div class="input-set">
+						<label for="textarea-03">位址列表</label><textarea type="text" id="textarea-03"></textarea>
+					</div>
+					<div class="input-set">
+						<label for="textarea-01">內文</label><textarea type="text" id="textarea-01"></textarea>
+					</div>
+					<div class="input-set">
+						<label for="textarea-02">自訂欄位<a class="h3-link">教學點此</a></label><textarea type="text" id="textarea-02"></textarea>
+					</div>
+				</div>
+				<div class="right-content">
+					預覽
+				</div>
+				<div class="clear"></div>
+				<hr>
+
+				<!-- 行事曆推播-->
+				<h3>請填寫推播內容<a class="h3-link">使用說明</a></h3>
+				<div class="left-content">
+					<div class="input-set">
+						<label for="input-01">標題內容</label><input type="text" id="input-01">
+					</div>
+					<div class="input-set">
+						<label for="input-02">按鈕字樣</label><input type="text" id="input-02">
+					</div>
+					<div class="input-set">
+						<label for="input-03">動作</label>
+						<div id="push-type-02">
+							<input type="radio" id="radio5" name="radio" class="radio"><label for="radio5">新增</label>
+							<input type="radio" id="radio6" name="radio"><label for="radio6">修改（Android 為純通知）</label>
+							<input type="radio" id="radio7" name="radio"><label for="radio7">刪除（Android 為純通知）</label>
+						</div>
+					</div>
+					<div class="input-set">
+						<label for="input-02">行程 ID</label><input type="text" id="input-02">
+					</div>
+					<div class="input-set">
+						<label>開始時間</label><input type="text" class="datepicker"><input type="time" name="usr_time">
+					</div>
+					<div class="input-set">
+						<label>結束時間</label><input type="text" class="datepicker"><input type="time" name="usr_time">
+					</div>
+					<div class="input-set">
+						<label>顯示頻率</label>
+						<select name="select-001" id="select-001">
+							<option>10 分鐘</option>
+							<option>20 分鐘</option>
+							<option>30 分鐘</option>
+							<option>40 分鐘</option>
+							<option>50 分鐘</option>
+							<option>60 分鐘</option>
+						</select>
+					</div>
+					<div class="input-set">
+						<label>顯示頻率</label>
+						<select name="select-002" id="show-frequency">
+							<option value="once">一次</option>
+							<option>每天</option>
+							<option>週一至週五</option>
+							<option>每週</option>
+							<option>每年</option>
+							<option>每月</option>
+						</select>
+					</div>
+					<div class="input-set hide-option">
+						<label>結束條件</label>
+						<div id="push-type-03">
+							<input type="radio" id="radio8" name="radio" class="radio" value="never"><label for="radio8">永遠不要（手動結束）</label>
+							<input type="radio" id="radio9" name="radio"><label for="radio9">重複 <input type="text" size="4">次</label>
+							<input type="radio" id="radio10" name="radio"><label for="radio10">執 <input type="text" class="datepicker" size="10"><input type="time" name="usr_time"></label>
+						</div>
+					</div>
+
+					<!-- Checkbox for Show/Hide Function-->
+					<script type="text/javascript">
+						$(document).ready(function(){
+						    $("#show-frequency").change(function(){
+						        $(this).find("option:selected").each(function(){
+						            if($(this).attr("value")=="once"){
+						                $(".hide-option").hide();
+						            }
+						            else{
+						                $(".hide-option").show();
+						            }
+						        });
+						    }).change();
+						});
+					</script>
+
+					<div class="input-set">
+						<label for="textarea-01">內文</label><textarea type="text" id="textarea-01"></textarea>
+					</div>
+					<div class="input-set">
+						<label for="textarea-02">自訂欄位<a class="h3-link">教學點此</a></label><textarea type="text" id="textarea-02"></textarea>
+					</div>
+				</div>
+				<div class="right-content">
+					預覽
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<div class="bottom-area">
+			<div class="bottom-right">
+				<button>上一步</button>
+				<button disabled>下一步</button>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>	
+</div>
+
+<div class="slide-in">
+	<ul class="tk-museo-sans">
+		<li><a href="#">APP 管理</a></li>
+		<li>新增 APP</li>
+		<li>帳號與組織</li>
+		<li>支援與下載</li>
+		<li>公告訊息</li>
+		<li>進階搜尋</li>
+		<li>帳號資料</li>
+		<li>WatchDog</li>		
+	</ul>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="style/style.css" />
+<link rel="stylesheet" href="style/swiper.css">
+<link rel="stylesheet" href="style/jquery-ui.css">
+<script type="text/javascript" src="script/vue1oix.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+<title>Example</title>
+<script src="script/jquery.js"></script>
+<script src="script/hammer.js"></script>
+<script src="script/jquery-ui.js"></script>
+<quu>
+<script>
+
+$(document).ready(function(e) {
+	
+	var startX, curX, startY, curY; // Variables
+	var newXScroll, newYScroll, genXScroll; // More Variables!
+	
+	// Change the height of the sidebar, as well as a few things to do with the main content area, so the user
+	// can actually scroll in the content area.
+	function sideBarHeight() { 
+	
+		var docHeight = $(document).height();
+		var winHeight = $(window).height();
+		
+		$('.slide-in').height(winHeight);
+		$('#main-container').height(winHeight);
+		$('#sub-container').height($('#sub-container').height());
+	} 
+	
+	sideBarHeight();
+	
+	var outIn = 'in';
+	
+	function runAnimation() {
+	
+		if(outIn == 'out') {
+			
+			$('.slide-in').toggleClass('on');
+			$('#main-container').toggleClass('on');	
+			outIn = 'in';
+			
+		} else if(outIn == 'in') {
+		
+			$('.slide-in').toggleClass('on');	
+			$('#main-container').toggleClass('on');	
+			outIn = 'out';
+			
+		}
+	
+	}
+	
+	$('.menu-icon')[0].addEventListener('touchend', function(e) {
+		$('.slide-in').toggleClass('on');		
+		$('#main-container').toggleClass('on');
+	});
+	
+	$('.menu-icon').click(function() {
+		$('.slide-in').toggleClass('on');		
+		$('#main-container').toggleClass('on');
+	});
+	
+});
+
+</script>
+<script>
+	$(function() {
+		$( "#push-type" ).buttonset();
+    	$( "#check-01" ).button();
+	});
+</script>
+<script>
+	$(function() {
+		$( "#push-type-03" ).buttonset();
+	});
+</script>
+<script>
+	$(function() {
+		$( ".datepicker" ).datepicker();
+	});
+</script>
+</head>
+<body>
+<div class="menu-icon">
+	<div class="bar"></div>
+	<div class="bar"></div>
+	<div class="bar"></div>
+</div>
+<div id="main-container" class="tk-chaparral-pro">
+
+	<div id="sub-container">
+		<div class="top-bar">
+			<div class="app-switch">
+				<span class="switch"><a href="#"><</a></span>
+				<div class="current-app">
+					<div class="icon"><img src="images/fakeapp.png"></div>
+				</div>
+				<span class="switch"><a href="">></a></span>
+				<div class="clear"></div>
+				<span class="app-name">鈔票 APP</span>
+			</div>
+			<nav class="main-nav">
+				<ul>
+					<li class="new-push"><span><a href="#">新增推播</a></span></li>
+					<li class="push-record"><span><a href="#">推播紀錄</a></span></li>
+					<li class="analysis"><span><a href="#">分析圖表</a></span></li>
+					<li class="setting"><span><a href="#">開發設定</a></span></li>
+				</ul>
+			</nav>
+			<div class="topbar-right">
+				<span class="user">123@jamzoo.com.tw</span>
+				<button class="logout">登出</button>
+			</div>
+			
+		</div>
+		<div id="content" class="content-area">
+			<h2>建立觸發式推播</h2>
+			<div class="result-area">
+				<div class="step-bar-3">
+					<div class="step on">
+						<div class="step-ball" id="step-01">1</div>
+						<label for="step-01">推播類型</label>
+						<div class="step-line"> </div>
+					</div>
+					<div class="step on">
+						<div class="step-ball" id="step-02">2</div>
+						<label for="step-02">推播內容</label>
+						<div class="step-line"> </div>
+					</div>
+					<div class="step on">
+						<div class="step-ball" id="step-03">3</div>
+						<label for="step-03">推播時機</label>
+						<div class="step-line"> </div>
+					</div>
+				</div>
+				<div class="clear"></div>
+				<h3>推播時機與後續</h3>
+				<div id="push-type" class="radio-button-group">
+					<input type="radio" id="radio1" name="radio" class="radio"><label for="radio1">使用者開啟 APP 時，發送這則推播</label>
+					<input type="radio" id="radio2" name="radio" class="radio"><label for="radio2">使用者在第一次下載 APP 後，開啟 APP 時</label>
+					<input type="radio" id="radio3" name="radio">
+					<label for="radio3">
+					由其他推播的動作來觸發本次活動<br>
+						<div class="input-set">
+							<label>活動名稱</label><input type="text">
+						</div>
+						<div class="input-set">
+							<label>活動 ID 選擇由其他推播來觸發時出現</label><input type="text">
+						</div>
+						<div class="input-set">
+							<label>活動名稱</label><textarea></textarea>
+						</div>
+						<div class="input-set">
+							活動期間<br>
+							<label>開始</label><input type="text" class="datepicker"><input type="time" name="usr_time">GMT+8 Taipei<br>
+							<label>結束</label><input type="text" class="datepicker"><input type="time" name="usr_time">GMT+8 Taipei<br>
+						</div>
+						<div class="input-set">
+						發送數量<br>
+							<div id="push-type-03" class="radio-button-group">
+								<input type="radio" id="radio8" name="radio" class="radio" value="never"><label for="radio8">不限量</label>
+								<input type="radio" id="radio9" name="radio"><label for="radio9">限量數量為 <input type="text" size="4">則, 發送完成活動結束後, 發送通知至<input type="email"></label>
+							</div>
+						</div>
+					</label>
+					<hr>
+							<input type="checkbox" id="check1">
+								<label for="check1" class="checkbox-single">裝置收到推播後完成
+								<select name="select-001" id="select-001">
+									<option>讀取動作</option>
+									<option>分享動作</option>
+									<option>其他動作 1（客製）</option>
+									<option>其他動作 2（客製）</option>
+									<option>其他動作 3（客製）</option>
+								</select>後，再發送另一則活動推播
+								<select name="select-002" id="select-002">
+									<option>請選擇活動</option>
+								</select>
+								</label>
+				</div>
+			</div>
+		</div>
+		<div class="bottom-area">
+			<div class="bottom-right">
+				<button>上一步</button>
+				<button>送出</button>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>	
+</div>
+
+<div class="slide-in">
+	<ul class="tk-museo-sans">
+		<li><a href="#">APP 管理</a></li>
+		<li>新增 APP</li>
+		<li>帳號與組織</li>
+		<li>支援與下載</li>
+		<li>公告訊息</li>
+		<li>進階搜尋</li>
+		<li>帳號資料</li>
+		<li>WatchDog</li>		
+	</ul>
+</div>
+
+</body>
+</html>
