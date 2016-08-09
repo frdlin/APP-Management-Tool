@@ -1,5 +1,5 @@
-# APPs Management Tool
+# Apps Management Tool
 ## Description
-APPs management and analysis tool for APP company.
+Apps management and analysis tool for APP company.
 ## Skills
 HTML5, CSS3, Jquery
