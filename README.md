@@ -1,4 +1,4 @@
-# APP-Management-Tool
+# APPs Management Tool
 ## Description
 APPs management and analysis tool for APP company.
 ## Skills
